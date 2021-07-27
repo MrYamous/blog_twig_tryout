@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Modifier un article {% endblock %}
+
+{% block content %}
+    <div style="text-align: center;">
+        <h1>
+            Modifier l'article {{ form.vars.value.title }}
+        </h1>
+        {{ form(form) }}
+    </div>
+{% endblock %}

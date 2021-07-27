@@ -32,7 +32,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
     use TargetPathTrait;
 
     public const LOGIN_ROUTE = 'login';
-    public const ARTICLES_ROUTE = 'articles';
+    public const ARTICLES_ROUTE = 'articles_list';
 
     private $entityManager;
     private $urlGenerator;

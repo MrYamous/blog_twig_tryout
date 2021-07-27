@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+    <div style="text-align: center;">
+        <h1>
+            {{ article.title }}
+        </h1>
+        <p>{{ article.title }}</p>
+        <p>{{ article.subtitle }}</p>
+        <div>{{ article.content }}</div>
+        <p>{{ article.creationDate|date("d/m/Y") }}</p>
+        <p>{{ article.author.email }}</p>
+        <p><a href="{{ path('articles_list') }}">Revenir à la liste</a></p>
+    </div>
+{% endblock %}

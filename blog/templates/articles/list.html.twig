@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ parent() ~ "Articles" }}{% endblock %}
+
+{% block content %}
+    <div style="text-align: center;">
+        <h1>
+            Liste des articles
+        </h1>
+        <p><a href="{{ path('articles_new') }}">Créer un nouvel article</a></p>
+        {% for article in articles %}
+            <ul>
+                <li><a href="{{ path('articles_show', {'id': article.id}) }}">{{ article.title }}</a></li>
+                <li>{{ article.subtitle }}</li>
+                <li>{{ article.content }}</li>
+                <li>{{ article.creationDate|date("d/m/Y") }}</li>
+                <li>{{ article.author.email }}</li>
+                <li><a href="{{ path('articles_edit', {'id': article.id}) }}">Modifier l'article</a></li>
+                {% if canDelete == true %}
+                    <li><a href="{{ path('articles_delete', {'id': article.id}) }}">Supprimer l'article</a></li>
+                {% endif %}
+            </ul>
+        {% endfor %}
+    </div>
+{% endblock %}
